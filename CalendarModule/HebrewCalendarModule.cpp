@@ -15,21 +15,26 @@ HebrewCalendar::HebrewCalendar (void)
 	this->id.SetTo("Hebrew");
 	this->fDaysInLongestMonth = 31;
 	this->fDaysInWeek = 7;
+	BString builder;
 	
 	// Fill in the days of the month
 	for (i = 1; i < 32; i++)
 	{
-		if (i < 10)
-		{
-
-		}
-		else 
-		{
-			
-		}
+		builder << (uint32)i;
+		this->fDaysNames[i] = builder;
+		builder.Truncate(0);		// Clear the string
 	}
 
 	// Fill in the names of the months
+	struct DoubleNames names;
+	
+	names.longName = BString("Tishrei");
+	names.shortName = BString("Tishrei");
+	this->fMonthNames[1] = names;
+	
+	names.longName = BString("Kheshvan");
+	names.shortName = BString("Kheshvan");
+	this->fMonthNames[2] = names;
 
 
 	// Fill in the names of the weekdays

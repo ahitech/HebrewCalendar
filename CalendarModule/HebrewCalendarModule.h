@@ -16,13 +16,6 @@ class CalendarModule;
 class HebrewCalendar : 
 	public CalendarModule
 {
-private:	// Constants for the calendar calculation
-	unsigned char	fDaysInWeek;			//!< In Hebrew Calendar, it's 7.
-	map<int, DoubleNames> fMonthsNames;		//!< Names of the months, localized, in short and long form.
-	map<int, BString> fDaysNames;			//!< Names of the days, localized.
-	map<uint32, DoubleNames> fWeekdaysNames;	//!< Names of the weekdays, localized, in short and long form.
-	BString id;								//!< Identifier of the module.
-	unsigned char	fDaysInLongestMonth;	//!< How many days the longest month has?
 
 public:
 		//! These functions translate the times from one format to another.
